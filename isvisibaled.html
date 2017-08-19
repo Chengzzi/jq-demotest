@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.father{
+			height: 1600px;
+		}
+		.chlid{
+			margin: 20px auto;
+			width: 200px;
+			font-size: 0;
+		}
+		.chlid img{
+			width: 100%;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="father">
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+		<div class="chlid">
+			<img src="http://img3.imgtn.bdimg.com/it/u=4122560844,1470181994&fm=214&gp=0.jpg">
+		</div>
+
+	</div>
+	<script>
+	$(function(){
+		var imgSrc = [
+			{"title":121212,"src":"http://opor4s8bz.bkt.clouddn.com/1.jpg"},
+			{"title":14542,"src":"http://opor4s8bz.bkt.clouddn.com/2.jpg"},
+			{"title":122353462,"src":"http://opor4s8bz.bkt.clouddn.com/3.jpg"},
+			{"title":12234252,"src":"http://opor4s8bz.bkt.clouddn.com/4.jpg"},
+			{"title":12235512,"src":"http://opor4s8bz.bkt.clouddn.com/5.jpg"},
+			{"title":122342,"src":"http://opor4s8bz.bkt.clouddn.com/6.jpg"},
+			{"title":15667812,"src":"http://opor4s8bz.bkt.clouddn.com/7.jpg"},
+			{"title":12989012,"src":"http://opor4s8bz.bkt.clouddn.com/8.jpg"},
+			{"title":580002,"src":"http://opor4s8bz.bkt.clouddn.com/9.jpg"},
+			{"title":5757212,"src":"http://opor4s8bz.bkt.clouddn.com/10.jpg"},
+			{"title":16881212,"src":"http://opor4s8bz.bkt.clouddn.com/11.jpg"},
+			{"title":1780412,"src":"http://opor4s8bz.bkt.clouddn.com/12.jpg"},
+			{"title":112,"src":"http://opor4s8bz.bkt.clouddn.com/13.jpg"},
+			{"title":11587212,"src":"http://opor4s8bz.bkt.clouddn.com/14.jpg"}
+		];
+		var page = 0;
+		var len = 3;
+		rander()
+		$(window).scroll(function(){
+			rander()
+		})
+		function rander(){
+			if(timer){
+				clearTimeout(timer);
+			}
+			var timer = setTimeout(function(){
+				$node = $(".chlid")
+				$node.each(function(index,e){
+					if(isVisible($(e))&&!onloaded($(e))){
+						console.log(true)
+						load($(e))
+					}	
+				})
+			},300)
+		}
+		function isVisible($node){ 
+			var wTop = $(window).scrollTop();
+			var wH = window.innerHeight;
+			if($node){
+				if(wH+wTop>$node.offset().top&&$node.offset().top>wTop-10){
+					return true ;
+				}else{
+					return false ;
+				}
+			}
+		}
+		function onloaded($node){ 
+			return $node.data("load") == "yes";
+		}
+		function load($node){ 
+			if(page>=imgSrc.length){
+				return;
+			}
+			$node.data("load","yes");
+			$node.find("img").attr("src",imgSrc[page].src)
+			page++;
+		}
+	})
+
+
+	</script>
+</body>
+</html>

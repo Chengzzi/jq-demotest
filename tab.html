@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.box{
+			width: 640px;
+			margin-top: 50px;
+			margin-left: 50px;
+		}
+		.clear:after{
+			display:block;
+			clear: both;
+			content: "";
+		}
+		a{text-decoration: none;}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		li{
+			float: left;
+		}
+		.hide{
+			display: none;
+		}
+
+		
+		.nav{
+			border-radius: 5px;
+			display: inline-block;
+			border:1px solid #bbb; 
+		}
+		.nav>li{
+			cursor: pointer;
+			padding: 10px 0;
+			
+		}
+		.nav>li a{
+			border-left: 1px solid #bbb;
+			padding:0 10px;
+			color:#666;
+		}
+		.nav>li:nth-child(1) a{
+			border: none;
+		}
+		.content.active{
+		
+		}
+		.nav>li.active{
+			background: #bbb;
+		}
+		.nav>li.active a{
+			color: red;
+		}
+
+
+		
+		.content{
+			width: 640px;
+			border-radius: 5px;
+			
+			border: 1px solid #999;
+		}
+		.content ul{
+			margin-left: -20px;
+			margin-top: -20px;
+		}
+		.content li{
+			margin-top: 20px;
+			margin-left:20px;
+			width: 178px;
+			padding: 10px;
+			text-align: center;
+			position: relative;
+			border: 1px solid #bbb;
+		}
+		.content li .buy{
+			display: none;
+			position: absolute;
+			top: 0;bottom: 0;left: 0;right: 0;
+			background: rgba(100,100,100,0.3);
+
+		}
+		.buy:before{
+		  content:"";
+		  display: inline-block;
+		  height:100%;
+		  vertical-align:middle;
+		}
+		.buy a{
+			background: #fff;
+			vertical-align:middle;
+			margin-top: 50px;
+			padding: 10px;
+			border: 1px solid red;
+			color: red;
+		}
+		.prod-price{
+			color: red;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul class="nav clear">
+			<li class="active" data-index="0"> <a href="javascript:void(0)">热门</a></li>
+			<li data-index="1"><a href="javascript:void(0)">珠宝首饰</a></li>
+			<li data-index="2"><a href="javascript:void(0)">奢侈品</a></li>
+		</ul>
+		<div class="content clear active">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+		<div class="content clear hide">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+		<div class="content clear hide">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	<div class="box">
+		<ul class="nav clear">
+			<li class="active" data-index="0"> <a href="javascript:void(0)">热门</a></li>
+			<li data-index="1"><a href="javascript:void(0)">珠宝首饰</a></li>
+			<li data-index="2"><a href="javascript:void(0)">奢侈品</a></li>
+		</ul>
+		<div class="content clear active">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+		<div class="content clear hide">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥699</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+		<div class="content clear hide">
+			<ul class="clear"> 
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+				<li>
+					<img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg">
+					<div class="prod-name">藏金镶玉路路通吊坠</div>
+					<div class="prod-price">￥1788</div>
+					<div class="buy"><a href="javascript:void(0)">立即购买</a></div>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	<script>
+	$(function(){
+		function Tab(box){
+			this.$box = $(box);
+			this.$nav = $(box).find(".nav");
+
+			this.$content = $(box).find(".content") ;
+			this.addEvent();
+		}
+		Tab.prototype.addEvent = function(){
+			var that = this;
+			var $li = this.$nav.find("li");
+			this.$content.find("li").hover(function(){
+				$(this).find(".buy").fadeIn(300)
+			},function(){
+				$(this).find(".buy").fadeOut(300)
+			})
+			$li.click(function(){
+				var index = $(this).data("index")
+				that.toggle($(this),index);
+			})
+		}
+		Tab.prototype.toggle = function($this,index){
+			this.$nav.find("li").removeClass('active');
+			$this.addClass('active');
+			this.$content.addClass('hide');
+			$(this.$content[index]).toggleClass('hide')
+		};
+		$(".box").each(function(index, el) {
+			//console.log(el)
+			new Tab(el);		
+		});
+	})
+
+	</script>
+</body>
+</html>
